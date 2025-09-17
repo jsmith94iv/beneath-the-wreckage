@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Beneath the Wreckage | Official Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--black:#0a0a0a;--gray:#111;--light-gray:#222;--blue:#00aeff;--text:#e1e1e1;--display:'Anton',sans-serif;--body:'Oswald',sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--body);background:var(--black);color:var(--text);line-height:1.5;overflow-x:hidden}
+    img{max-width:100%;display:block}
+    a{color:var(--blue);text-decoration:none}
+    ul{list-style:none}
+
+    /* ====== ALWAYS-VISIBLE NAV ====== */
+    nav{
+      position:fixed;
+      top:0;left:0;width:100%;
+      background:rgba(0,0,0,.9);
+      border-bottom:1px solid var(--light-gray);
+      z-index:1000;
+      padding:.8rem 2rem;
+      display:flex;          /* keep flex   */
+      align-items:center;    /* vertical    */
+      justify-content:center;/* horizontal  */
+    }
+    nav ul{
+      display:flex;gap:2rem;
+    }
+    nav a{
+      font-weight:300;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      color:var(--text);
+      transition:color .3s;
+    }
+    nav a:hover{color:var(--blue)}
+
+    /* ------ HERO ------ */
+    header.hero{
+      height:100vh;
+      background:url(img/hero.jpg) center/cover no-repeat;
+      display:flex;align-items:center;justify-content:center;text-align:center;position:relative;
+    }
+    .hero::after{
+      content:'';position:absolute;inset:0;
+      background:url(img/overlay.png) center/cover;mix-blend-mode:multiply;opacity:.4;pointer-events:none;
+    }
+    .hero-inner{position:relative;z-index:2;max-width:700px;padding:1rem}
+    .hero-logo{width:80%;margin:0 auto 1.2rem;filter:drop-shadow(0 0 12px var(--blue))}
+    .hero h1{
+      font-family:var(--display);font-size:clamp(2.2rem,7vw,4.5rem);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.5rem;
+    }
+    .btn{
+      display:inline-block;background:var(--blue);color:var(--black);
+      padding:.7rem 1.8rem;font-weight:500;text-transform:uppercase;letter-spacing:1px;transition:.25s;
+    }
+    .btn:hover{background:#fff;color:var(--black)}
+
+    /* ------ SECTIONS ------ */
+    section{padding:4rem 1rem}
+    .wrap{max-width:1000px;margin:0 auto}
+    h2{font-family:var(--display);font-size:2.2rem;letter-spacing:2px;text-align:center;margin-bottom:2rem;color:var(--blue)}
+    .dark{background:var(--gray)}
+
+    /* ------ FADE-IN ------ */
+    section{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+    section.show{opacity:1;transform:translateY(0)}
+
+    /* ------ MUSIC ------ */
+    .spotify{width:100%;height:380px}
+
+    /* ------ VIDEOS ------ */
+    .grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+    .vid{position:relative;padding-bottom:56.25%;background:#000}
+    .vid iframe{position:absolute;inset:0;width:100%;height:100%}
+
+    /* ------ GALLERY ------ */
+    .gallery{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .gallery img{width:100%;height:220px;object-fit:cover;filter:grayscale(1);transition:.3s;border:1px solid var(--light-gray)}
+    .gallery img:hover{filter:grayscale(0);border-color:var(--blue)}
+
+    /* ------ FOOTER ------ */
+    footer{text-align:center;padding:2rem 1rem;font-size:.8rem;color:#555;border-top:1px solid var(--light-gray)}
+  </style>
+</head>
+
+<body>
+  <!-- ======  PERMANENT NAV  ====== -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ------ HERO ------ -->
+  <header id="home" class="hero">
+    <div class="hero-inner">
+      <img src="img/logo.png" alt="Beneath the Wreckage logo" class="hero-logo">
+      <h1>LOUD. BROKEN. BEAUTIFUL.</h1>
+      <a href="#music" class="btn">Stream the new single</a>
+    </div>
+  </header>
+
+  <!-- ------ MUSIC ------ -->
+  <section id="music"><div class="wrap">
+    <h2>Music</h2>
+    <iframe class="spotify" src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3n5aO4hD?utm_source=generator" frameborder="0" allowfullscreen></iframe>
+  </div></section>
+
+  <!-- ------ VIDEOS ------ -->
+  <section id="videos" class="dark"><div class="wrap">
+    <h2>Videos</h2>
+    <div class="grid">
+      <div class="vid"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe></div>
+      <div class="vid"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe></div>
+      <div class="vid"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe></div>
+    </div>
+  </div></section>
+
+  <!-- ------ ABOUT ------ -->
+  <section id="about"><div class="wrap">
+    <h2>About</h2>
+    <p style="max-width:700px;margin:0 auto;text-align:center;font-size:1.1rem">
+      Formed in the industrial underbelly of Baltimore, <strong>Beneath the Wreckage</strong> weld
+      heavy alt-rock riffs to post-grunge melancholy. Guitars scrape like rusted steel, drums pound
+      like factory hammers, vocals swing from whisper to war-cry. This is music for cracked concrete,
+      3-a.m. drives and every scar you keep hidden.
+    </p>
+  </div></section>
+
+  <!-- ------ GALLERY ------ -->
+  <section id="gallery" class="dark"><div class="wrap">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="img/album1.jpg" alt="Album cover">
+      <img src="img/poster1.jpg" alt="Tour poster">
+      <img src="img/live1.jpg" alt="Live shot">
+      <img src="img/album2.jpg" alt="Album cover">
+      <img src="img/live2.jpg" alt="Live shot">
+      <img src="img/poster2.jpg" alt="Poster">
+    </div>
+  </div></section>
+
+  <!-- ------ CONTACT ------ -->
+  <section id="contact"><div class="wrap">
+    <h2>Contact & Socials</h2>
+    <p style="text-align:center">
+      <a href="https://instagram.com/beneaththewreckage" target="_blank">Instagram</a> |
+      <a href="https://facebook.com/beneaththewreckage" target="_blank">Facebook</a> |
+      <a href="https://twitter.com/btwreckage" target="_blank">Twitter</a> |
+      <a href="mailto:book@btwreckage.com">book@btwreckage.com</a>
+    </p>
+  </div></section>
+
+  <!-- ------ FOOTER ------ -->
+  <footer>&copy; <span id="yr"></span> Beneath the Wreckage. All rights reserved.</footer>
+
+<script>
+  /* fade-in on scroll */
+  const io=new IntersectionObserver((e)=>e.forEach((s)=>{if(s.isIntersecting)s.target.classList.add('show')}),{threshold:.15});
+  document.querySelectorAll('section').forEach((s)=>io.observe(s));
+  /* year */
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
