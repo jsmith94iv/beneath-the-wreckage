@@ -15,48 +15,18 @@
     ul{list-style:none}
 
     /* ====== ALWAYS-VISIBLE NAV ====== */
-    nav{
-      position:fixed;
-      top:0;left:0;width:100%;
-      background:rgba(0,0,0,.9);
-      border-bottom:1px solid var(--light-gray);
-      z-index:1000;
-      padding:.8rem 2rem;
-      display:flex;          /* keep flex   */
-      align-items:center;    /* vertical    */
-      justify-content:center;/* horizontal  */
-    }
-    nav ul{
-      display:flex;gap:2rem;
-    }
-    nav a{
-      font-weight:300;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      color:var(--text);
-      transition:color .3s;
-    }
+    nav{position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,.9);border-bottom:1px solid var(--light-gray);z-index:1000;padding:.8rem 2rem;display:flex;align-items:center;justify-content:center;}
+    nav ul{display:flex;gap:2rem}
+    nav a{font-weight:300;text-transform:uppercase;letter-spacing:1px;color:var(--text);transition:color .3s}
     nav a:hover{color:var(--blue)}
 
     /* ------ HERO ------ */
-    header.hero{
-      height:100vh;
-      background:url(img/hero.jpg) center/cover no-repeat;
-      display:flex;align-items:center;justify-content:center;text-align:center;position:relative;
-    }
-    .hero::after{
-      content:'';position:absolute;inset:0;
-      background:url(img/overlay.png) center/cover;mix-blend-mode:multiply;opacity:.4;pointer-events:none;
-    }
+    header.hero{height:100vh;background:url(img/hero.jpg) center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
+    .hero::after{content:'';position:absolute;inset:0;background:url(img/overlay.png) center/cover;mix-blend-mode:multiply;opacity:.4;pointer-events:none;}
     .hero-inner{position:relative;z-index:2;max-width:700px;padding:1rem}
     .hero-logo{width:80%;margin:0 auto 1.2rem;filter:drop-shadow(0 0 12px var(--blue))}
-    .hero h1{
-      font-family:var(--display);font-size:clamp(2.2rem,7vw,4.5rem);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.5rem;
-    }
-    .btn{
-      display:inline-block;background:var(--blue);color:var(--black);
-      padding:.7rem 1.8rem;font-weight:500;text-transform:uppercase;letter-spacing:1px;transition:.25s;
-    }
+    .hero h1{font-family:var(--display);font-size:clamp(2.2rem,7vw,4.5rem);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.5rem;}
+    .btn{display:inline-block;background:var(--blue);color:var(--black);padding:.7rem 1.8rem;font-weight:500;text-transform:uppercase;letter-spacing:1px;transition:.25s;}
     .btn:hover{background:#fff;color:var(--black)}
 
     /* ------ SECTIONS ------ */
@@ -77,10 +47,10 @@
     .vid{position:relative;padding-bottom:56.25%;background:#000}
     .vid iframe{position:absolute;inset:0;width:100%;height:100%}
 
-    /* ------ GALLERY ------ */
+    /* ------ GALLERY  –– 8 REAL PICS  ------ */
     .gallery{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-    .gallery img{width:100%;height:220px;object-fit:cover;filter:grayscale(1);transition:.3s;border:1px solid var(--light-gray)}
-    .gallery img:hover{filter:grayscale(0);border-color:var(--blue)}
+    .gallery-item img{width:100%;height:220px;object-fit:cover;filter:grayscale(1);transition:.3s;border:1px solid var(--light-gray)}
+    .gallery-item img:hover{filter:grayscale(0);border-color:var(--blue)}
 
     /* ------ FOOTER ------ */
     footer{text-align:center;padding:2rem 1rem;font-size:.8rem;color:#555;border-top:1px solid var(--light-gray)}
@@ -136,16 +106,18 @@
     </p>
   </div></section>
 
-  <!-- ------ GALLERY ------ -->
+  <!-- ------ GALLERY  –– 8 REAL PICS  ------ -->
   <section id="gallery" class="dark"><div class="wrap">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="img/album1.jpg" alt="Album cover">
-      <img src="img/poster1.jpg" alt="Tour poster">
-      <img src="img/live1.jpg" alt="Live shot">
-      <img src="img/album2.jpg" alt="Album cover">
-      <img src="img/live2.jpg" alt="Live shot">
-      <img src="img/poster2.jpg" alt="Poster">
+      <div class="gallery-item"><img src="https://raw.githubusercontent.com/jsmith94iv/beneath-the-wreckage/refs/heads/main/img/BTW%2010.jpg" alt="BTW 10" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://raw.githubusercontent.com/jsmith94iv/beneath-the-wreckage/refs/heads/main/img/BTW%2012.jpg" alt="BTW 12" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://raw.githubusercontent.com/jsmith94iv/beneath-the-wreckage/refs/heads/main/img/post-hardcore.jpg" alt="Post-Hardcore" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://raw.githubusercontent.com/jsmith94iv/beneath-the-wreckage/refs/heads/main/img/BTW%2011.jpg" alt="BTW 11" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://raw.githubusercontent.com/jsmith94iv/beneath-the-wreckage/refs/heads/main/img/BTW%2013.jpg" alt="BTW 13" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://raw.githubusercontent.com/jsmith94iv/beneath-the-wreckage/refs/heads/main/img/BTW%202.jpg" alt="BTW 2" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://raw.githubusercontent.com/jsmith94iv/beneath-the-wreckage/refs/heads/main/img/BTW%207.jpg" alt="BTW 7" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://raw.githubusercontent.com/jsmith94iv/beneath-the-wreckage/refs/heads/main/img/BTW%208.jpg" alt="BTW 8" loading="lazy"></div>
     </div>
   </div></section>
 
@@ -163,12 +135,12 @@
   <!-- ------ FOOTER ------ -->
   <footer>&copy; <span id="yr"></span> Beneath the Wreckage. All rights reserved.</footer>
 
-<script>
-  /* fade-in on scroll */
-  const io=new IntersectionObserver((e)=>e.forEach((s)=>{if(s.isIntersecting)s.target.classList.add('show')}),{threshold:.15});
-  document.querySelectorAll('section').forEach((s)=>io.observe(s));
-  /* year */
-  document.getElementById('yr').textContent=new Date().getFullYear();
-</script>
+  <script>
+    /* fade-in on scroll */
+    const io=new IntersectionObserver((e)=>e.forEach((s)=>{if(s.isIntersecting)s.target.classList.add('show')}),{threshold:.15});
+    document.querySelectorAll('section').forEach((s)=>io.observe(s));
+    /* year */
+    document.getElementById('yr').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
